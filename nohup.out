@@ -1,0 +1,17 @@
+✅ DB Config:
+Host: 127.0.0.1
+User: flaskuser
+Pass: Flask@123
+DB:   flaskapp
+✅ Table created or already exists.
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.29.227:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-242-393
+72.255.28.149 - - [03/Jul/2026 10:10:23] "GET / HTTP/1.1" 200 -
