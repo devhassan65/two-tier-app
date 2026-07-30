@@ -1,22 +1,39 @@
-# Flask Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flask-deployment
   namespace: flask-app
+
 spec:
   replicas: 1
+
   selector:
     matchLabels:
       app: flask
+
   template:
     metadata:
       labels:
         app: flask
+
     spec:
       containers:
-      - name: flask
-        image: hassanzia65/two-tier:v1
-        ports:
-        - containerPort: 5000
+        - name: flask
+          image: hassanzia65/two-tier:v1   # Ya apni latest image
+
+          ports:
+            - containerPort: 5000
+
+          env:
+            - name: MYSQL_HOST
+              value: mysql-service.mysql-db.svc.cluster.local
+
+            - name: MYSQL_USER
+              value: root
+
+            - name: MYSQL_PASSWORD
+              value: rootpassword
+
+            - name: MYSQL_DB
+              value: messages
 
