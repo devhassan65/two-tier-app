@@ -21,13 +21,13 @@ spec:
       - name: mysql
         image: mysql:8
 
-        env:
-        - name: MYSQL_ROOT_PASSWORD
-          value: rootpassword
-
-        - name: MYSQL_DATABASE
-          value: messages
-
         ports:
         - containerPort: 3306
+
+        envFrom:
+        - secretRef:
+            name: mysql-secret
+        - configMapRef:
+            name: mysql-config
+
 
